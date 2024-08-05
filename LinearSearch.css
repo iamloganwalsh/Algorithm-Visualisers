@@ -1,0 +1,6 @@
+#arrayContainer li{
+    display: inline;
+    padding: 15px;
+    margin: 0;
+    border: solid black 1px;
+}
