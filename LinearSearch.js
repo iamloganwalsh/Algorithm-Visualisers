@@ -79,3 +79,53 @@ function startSearch() {
     printArray(numberArray);
     StepLoop(NumValue, numberArray);
 }
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const codeSelector = document.getElementById("language-selector");
+    const codeDisplay = document.getElementById("code-display");
+
+    const codeSnippets = {
+        python: `def LinearSearch(input_array, target_value):
+        
+    # Loop through each item in the array
+    for index in range(len(input_array) - 1):
+        
+        # If we found our item, we return the index where it is stored
+        if input_array[index] == target_value:
+        
+            return index
+        
+    # If our item is not in the list, return -1
+    return -1`,
+        javascript: `function LinearSearch(input_array, target_value) {
+
+    // Loop through each item in the array
+    for (let i = 0; i < input_array.length; i++) {
+
+        // If we found our item, we return the index where it is stored
+        if (input_array[i] === target_value) {
+            return i;
+        }
+    }
+    
+    // If our item is not in the list, return -1
+    return -1;
+    }`
+    };
+
+    function updateCodeDisplay() {
+        const selectedOption = codeSelector.value;
+        codeDisplay.textContent = codeSnippets[selectedOption];
+        codeDisplay.className = `language-${selectedOption}`;
+        hljs.highlightElement(codeDisplay); // Apply highlighting
+    }
+
+    codeSelector.addEventListener("change", updateCodeDisplay);
+
+    // Initialize the display with the first option
+    updateCodeDisplay();
+});

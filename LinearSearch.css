@@ -1,4 +1,4 @@
-.algorithm-display {
+.algorithm-container {
     height: 50dvh;
     display: flex;
     flex-direction: column;
@@ -6,21 +6,27 @@
     align-items: center;
 }
 
-.algorithm-display #arrayContainer ul{
+.algorithm-container #arrayContainer ul{
     padding: 0;
 }
 
-.algorithm-display #arrayContainer li{
+.algorithm-container #arrayContainer li{
     display: inline;
     padding: 15px;
     margin: 0;
     border: solid black 1px;
 }
 
-.input-display {
 
+.code-container select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
 }
 
-.code-display .python {
-    background-color: white;
+.code-container pre {
+    tab-size: 4;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
 }

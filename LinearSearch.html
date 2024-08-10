@@ -6,10 +6,11 @@
     <script src="LinearSearch.js"></script>
     <link href="navbar.css" rel="stylesheet">
     <link href="LinearSearch.css" rel="stylesheet">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <!-- Highlight.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
     <title>Linear Search</title>
 </head>
 <body>
@@ -19,14 +20,14 @@
         </div>
     </section>
 
-    <section class="algorithm-display">
+    <section class="algorithm-container">
         <div id="arrayContainer"></div>
         <div id="indexCounter"></div>
         <div id="resultContainer"></div>
     </section>
 
 
-    <section class="input-display">
+    <section class="input-container">
         <button onClick="startSearch()">Start</button>
         <button id="nextButton">Step</button>
         <input type="text" id="input-array" placeholder="Input csv array here">
@@ -34,7 +35,7 @@
     </section>
 
 
-    <section class="explanation-display">
+    <section class="explanation-container">
         <p>Time Complexity: O(n)</p>
         <p>Space Complexity: O(1)</p>
         <p>
@@ -43,26 +44,23 @@
             reach the end of the array before finding the target number, we can conclude that our number
             is not present in the array.
         </p>
+
+        <p>
+            If the array we search is sorted, we can create a fast version of Linear Search where we only
+            check numbers until we find a value greater than our target value. In this case, we know that 
+            the array does not contain our number, so we can finish the search without checking the whole array.
+        </p>
     </section>
 
 
-    <section class="code-display">
+    <section class="code-container">
+        <select id="language-selector">
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+        </select>
 
-        <pre><code class="python">
-            def LinearSearch(input_array, target_value):
+        <pre><code id="code-display" class="hljs"></code></pre>
 
-                # Loop through each item in the array
-                for index in range(len(input_array) - 1):
-
-                    # Check if the current item is equal to our target value
-                    if input_array[index] == target_value:
-
-                        # If we found our item, we return the index where it is stored
-                        return index
-
-                # If our item is not in the list, return -1
-                return -1
-            </code></pre>
     </section>
 
 </body>
