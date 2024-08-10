@@ -1,6 +1,26 @@
-#arrayContainer li{
+.algorithm-display {
+    height: 50dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.algorithm-display #arrayContainer ul{
+    padding: 0;
+}
+
+.algorithm-display #arrayContainer li{
     display: inline;
     padding: 15px;
     margin: 0;
     border: solid black 1px;
+}
+
+.input-display {
+
+}
+
+.code-display .python {
+    background-color: white;
 }

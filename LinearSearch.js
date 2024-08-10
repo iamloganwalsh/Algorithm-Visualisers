@@ -1,5 +1,4 @@
-
-
+// Print Array based on user input
 function printArray(array) {
     const container = document.getElementById('arrayContainer');
     
@@ -12,12 +11,14 @@ function printArray(array) {
     container.innerHTML = html;
 }
 
+// Update array colours
 function updateElement(index, color) {
     const listItems = document.querySelectorAll('#arrayContainer li');
     listItems[index].style.backgroundColor = color;
     console.log("Complete");
 }
 
+// Update current index display
 function updateIndex(newIndex) {
     const currIndex = document.getElementById('indexCounter');
     currIndex.innerHTML = `<p>Current Index: ${newIndex}</p>`
@@ -33,6 +34,7 @@ function waitForButtonClick() {
     });
 }
 
+// Actual traversal & Step tracker
 async function StepLoop(number, array) {
     const resultContainer = document.getElementById('resultContainer');
     for (let i = 0; i < array.length; i++) {
@@ -55,6 +57,7 @@ async function StepLoop(number, array) {
     return;
 }
 
+// Search Initialiser
 function startSearch() {
     const inputArray = document.getElementById('input-array');
     const inputNumber = document.getElementById('input-number');

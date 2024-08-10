@@ -4,17 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="LinearSearch.js"></script>
+    <link href="navbar.css" rel="stylesheet">
     <link href="LinearSearch.css" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <title>Linear Search</title>
 </head>
 <body>
-    <button onClick="startSearch()">Start</button>
-    <button id="nextButton">Step</button>
-    <input type="text" id="input-array" placeholder="Input csv array here">
-    <input type="number" id="input-number" placeholder="what number to look for">
-    <div id="arrayContainer"></div>
-    <div id="indexCounter"></div>
-    <div id="resultContainer"></div>
+    <section class="navbar">
+        <div>
+
+        </div>
+    </section>
+
+    <section class="algorithm-display">
+        <div id="arrayContainer"></div>
+        <div id="indexCounter"></div>
+        <div id="resultContainer"></div>
+    </section>
+
+
+    <section class="input-display">
+        <button onClick="startSearch()">Start</button>
+        <button id="nextButton">Step</button>
+        <input type="text" id="input-array" placeholder="Input csv array here">
+        <input type="number" id="input-number" placeholder="what number to look for">
+    </section>
+
+
+    <section class="explanation-display">
+        <p>Time Complexity: O(n)</p>
+        <p>Space Complexity: O(1)</p>
+        <p>
+            Linear Search is the most basic searching algorithm out there. To perform Linear Search,
+            we want to loop through each element in the array until we find our target number. If we
+            reach the end of the array before finding the target number, we can conclude that our number
+            is not present in the array.
+        </p>
+    </section>
+
+
+    <section class="code-display">
+
+        <pre><code class="python">
+            def LinearSearch(input_array, target_value):
+
+                # Loop through each item in the array
+                for index in range(len(input_array) - 1):
+
+                    # Check if the current item is equal to our target value
+                    if input_array[index] == target_value:
+
+                        # If we found our item, we return the index where it is stored
+                        return index
+
+                # If our item is not in the list, return -1
+                return -1
+            </code></pre>
+    </section>
 
 </body>
 </html>
