@@ -12,12 +12,15 @@ function printArray(array) {
     container.innerHTML = html;
 }
 
-
 function updateElement(index, color) {
     const listItems = document.querySelectorAll('#arrayContainer li');
-
     listItems[index].style.backgroundColor = color;
     console.log("Complete");
+}
+
+function updateIndex(newIndex) {
+    const currIndex = document.getElementById('indexCounter');
+    currIndex.innerHTML = `<p>Current Index: ${newIndex}</p>`
 }
 
 function waitForButtonClick() {
@@ -31,27 +34,32 @@ function waitForButtonClick() {
 }
 
 async function StepLoop(number, array) {
-    
-    for (let i = 0; i <= array.length; i++) {
+    const resultContainer = document.getElementById('resultContainer');
+    for (let i = 0; i < array.length; i++) {
         // Highlight current element
         updateElement(i, 'gray');
+        updateIndex(i);
         
         // Wait for the button press
         await waitForButtonClick();
 
         if (array[i] == number) {
             updateElement(i, 'green');
-            return 1;
+            
+            resultContainer.innerHTML = `<p>Status: Found</p>`
+            return;
         } else {
             updateElement(i, 'white');
         }
     }
-    return 0;
+    return;
 }
 
 function startSearch() {
     const inputArray = document.getElementById('input-array');
     const inputNumber = document.getElementById('input-number');
+    const resultContainer = document.getElementById('resultContainer');
+    resultContainer.innerHTML = 'Status: Not Found';
     let ArrayCSV = inputArray.value;
     let NumValue = parseFloat(inputNumber.value);
 
@@ -66,11 +74,5 @@ function startSearch() {
     const numberArray = stringArray.map(Number);
 
     printArray(numberArray);
-    let res = StepLoop(NumValue, numberArray);
-
-    if (res == 1) {
-        // Found
-    } else {
-        // Not Found
-    }
+    StepLoop(NumValue, numberArray);
 }
