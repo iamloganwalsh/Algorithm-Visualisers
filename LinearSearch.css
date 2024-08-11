@@ -1,5 +1,16 @@
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+    background-color: black;
+    height: 45px;
+}
+
 .algorithm-container {
-    height: 50dvh;
+    height: 30dvh;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,6 +28,30 @@
     border: solid black 1px;
 }
 
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.input-container #lower-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.explanation-container {
+    margin-inline: auto;
+    width: 90%;
+}
+
+.code-container {
+    margin-inline: auto;
+    width: 90%;
+}
 
 .code-container select {
     width: 100%;

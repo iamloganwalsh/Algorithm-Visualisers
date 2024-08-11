@@ -48,7 +48,7 @@ async function StepLoop(number, array) {
         if (array[i] == number) {
             updateElement(i, 'green');
             
-            resultContainer.innerHTML = `<p>Status: Found</p>`
+            resultContainer.innerHTML = `Status: Found`
             return;
         } else {
             updateElement(i, 'white');
@@ -62,20 +62,21 @@ function startSearch() {
     const inputArray = document.getElementById('input-array');
     const inputNumber = document.getElementById('input-number');
     const resultContainer = document.getElementById('resultContainer');
-    resultContainer.innerHTML = 'Status: Not Found';
+    const searchingNumber = document.getElementById('search-number');
+    resultContainer.innerHTML = `Status: Not Found`;
     let ArrayCSV = inputArray.value;
     let NumValue = parseFloat(inputNumber.value);
 
     if (ArrayCSV.trim() === '') {
-        ArrayCSV = "1,2,3,4,5";
+        ArrayCSV = "2,3,5,6,7,9,12,15";
     }
     if (isNaN(NumValue)) {
-        NumValue = 4;
+        NumValue = 12;
     }
 
     const stringArray = ArrayCSV.split(',');
     const numberArray = stringArray.map(Number);
-
+    searchingNumber.innerHTML = `Searching for: ${NumValue}`
     printArray(numberArray);
     StepLoop(NumValue, numberArray);
 }
@@ -128,4 +129,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initialize the display with the first option
     updateCodeDisplay();
+    printArray([2,3,5,6,7,9,12,15]);
 });
