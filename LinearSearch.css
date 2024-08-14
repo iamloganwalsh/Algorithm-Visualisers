@@ -8,13 +8,21 @@ body {
     height: 45px;
 }
 
-.algorithm-container {
+.interactive-container {
+    display: flex;
     height: 30dvh;
     padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.algorithm-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 30%;
 }
 
 .algorithm-container #arrayContainer ul{
@@ -28,24 +36,9 @@ body {
     border: solid black 1px;
 }
 
-.input-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
-.input-container #lower-component {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
 
 .explanation-container {
-    margin-inline: auto;
-    width: 90%;
+    width: 50%;
 }
 
 .code-container {

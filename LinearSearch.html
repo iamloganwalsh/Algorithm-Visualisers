@@ -19,40 +19,36 @@
         </div>
     </section>
 
-    <section class="algorithm-container">
-        <div id="arrayContainer"></div>
-        <div id="indexCounter"></div>
-        <div id="resultContainer"></div>
-    </section>
 
+    <section class="interactive-container">
 
-    <section class="input-container">
-        <p id="search-number" style="margin-top:0;margin-bottom:15px;"></p>
-        <div id="lower-component">
-            <button onClick="startSearch()">Start</button>
-            <button id="backButton">Back</button> <!--#####################################-->
-            <button id="nextButton">Step</button>
-            <input type="text" id="input-array" placeholder="Input csv array here">
-            <input type="number" id="input-number" placeholder="Target Value">
+        <div class="explanation-container">
+            <p>Time Complexity: O(n)</p>
+            <p>Space Complexity: O(1)</p>
+            <p>
+                Linear Search is the most basic searching algorithm out there. To perform Linear Search,
+                we want to loop through each element in the array until we find our target number. If we
+                reach the end of the array before finding the target number, we can conclude that our number
+                is not present in the array.
+            </p>
         </div>
-    </section>
 
 
-    <section class="explanation-container">
-        <p>Time Complexity: O(n)</p>
-        <p>Space Complexity: O(1)</p>
-        <p>
-            Linear Search is the most basic searching algorithm out there. To perform Linear Search,
-            we want to loop through each element in the array until we find our target number. If we
-            reach the end of the array before finding the target number, we can conclude that our number
-            is not present in the array.
-        </p>
+        <div class="algorithm-container">
+            <div id="arrayContainer"></div>
+            <div id="indexCounter"></div>
+            <div id="resultContainer"></div>
+            <p id="search-number" style="margin-top:0;margin-bottom:15px;"></p>
+            
+            <div id="lower-component">
+                <button onClick="startSearch()">Start</button>
+                <button id="backButton">Back</button> <!--#####################################-->
+                <button id="nextButton">Step</button>
+                <input type="text" id="input-array" placeholder="Input csv array here">
+                <input type="number" id="input-number" placeholder="Target Value">
+            </div>
+        </div>
 
-        <p>
-            If the array we search is sorted, we can create a fast version of Linear Search where we only
-            check numbers until we find a value greater than our target value. In this case, we know that 
-            the array does not contain our number, so we can finish the search without checking the whole array.
-        </p>
     </section>
 
 
@@ -61,9 +57,17 @@
             <option value="python">Python</option>
             <option value="javascript">JavaScript</option>
         </select>
-
         <pre><code id="code-display" class="hljs"></code></pre>
+    </section>
 
+    <section>
+        <div>        
+            <p>
+            If the array we search is sorted, we can create a fast version of Linear Search where we only
+            check numbers until we find a value greater than our target value. In this case, we know that 
+            the array does not contain our number, so we can finish the search without checking the whole array.
+            </p>
+        </div>
     </section>
 
 </body>

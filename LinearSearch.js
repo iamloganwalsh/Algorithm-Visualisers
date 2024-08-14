@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
     return -1;
     }`
     };
-
+    
     function updateCodeDisplay() {
         const selectedOption = codeSelector.value;
         codeDisplay.textContent = codeSnippets[selectedOption];
